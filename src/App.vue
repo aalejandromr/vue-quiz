@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     
-    <QuestionBox/>
+    <QuestionBox :question="questions[index]"/>
     
   </div>
 </template>
@@ -20,7 +20,8 @@ export default {
   // 
   data() {
     return {
-      questions: []
+      questions: [],
+      index: 0
     }
   },
   mounted: function() {
