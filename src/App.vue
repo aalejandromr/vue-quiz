@@ -2,7 +2,9 @@
   <div id="app">
     <Header/>
     
-    <QuestionBox :question="questions[index]"/>
+    <QuestionBox v-if="questions.length"
+    :question="questions[index]" :handleNext="next" 
+    />
     
   </div>
 </template>
@@ -22,6 +24,11 @@ export default {
     return {
       questions: [],
       index: 0
+    }
+  },
+  methods: {
+    next() {
+      this.index++;
     }
   },
   mounted: function() {
